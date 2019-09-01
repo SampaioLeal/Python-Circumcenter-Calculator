@@ -37,7 +37,7 @@ def calcEquidistance(x1, x2, x3, y1, y2, y3):
 
     if yDiffAC != 0 and xDiffAC != 0:
         c = -1 / (yDiffAC / xDiffAC)
-        c1 = ymAC - (c1*xmAC)
+        c1 = ymAC - (c*xmAC)
 
     if yDiffAB != 0 and xDiffAB != 0 and yDiffBC != 0 and xDiffBC != 0 and yDiffAC != 0 and xDiffAC != 0:
         resultX = -((a1 + (-b1)) / ((-b) + a))
