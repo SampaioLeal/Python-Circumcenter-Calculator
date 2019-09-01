@@ -28,41 +28,40 @@ def calcEquidistance(x1, x2, x3, y1, y2, y3):
     xDiffAC = x3 - x1
 
     if yDiffAB != 0 and xDiffAB != 0:
-        a = yDiffAB / xDiffAB
-        a1 = -1 / a
-        a2 = (ymAB) - (a1*xmAB)
+        a = -1 / (yDiffAB / xDiffAB)
+        a1 = ymAB - (a*xmAB)
 
     if yDiffBC != 0 and xDiffBC != 0:
-        b = yDiffBC / xDiffBC
-        b1 = -1 / b
-        b2 = ymBC - (b1*xmBC)
+        b = -1 / (yDiffBC / xDiffBC)
+        b1 = ymBC - (b*xmBC)
 
     if yDiffAC != 0 and xDiffAC != 0:
-        c1 = -1 / (yDiffAC / xDiffAC)
-        c2 = ymAC - (c1*xmAC)
-
-    def getResult():
-        con = -b1
-        con1 = -b2
-        ad = con + a1
-        ad1 = a2 + con1
-        di = ad1 / ad
-        di1 = -di
-        y8 = (b1 * di1) + b2
-
-        print("Ponto equidistante:", [di1, y8])
+        c = -1 / (yDiffAC / xDiffAC)
+        c1 = ymAC - (c1*xmAC)
 
     if yDiffAB != 0 and xDiffAB != 0 and yDiffBC != 0 and xDiffBC != 0 and yDiffAC != 0 and xDiffAC != 0:
-        getResult()
+        resultX = -((a1 + (-b1)) / ((-b) + a))
+        resultY = (b * resultX) + b1
+
+        print("\nPonto equidistante:", [resultX, resultY])
 
     elif yDiffAB != 0 and xDiffAB != 0 and yDiffBC != 0 and xDiffBC != 0:
-        getResult()
+        resultX = -((a1 + (-b1)) / ((-b) + a))
+        resultY = (b * resultX) + b1
+
+        print("\nPonto equidistante:", [resultX, resultY])
 
     elif yDiffBC != 0 and xDiffBC != 0 and yDiffAC != 0 and xDiffAC != 0:
-        getResult()
+        resultX = -((b1 + (-c1)) / ((-c) + b))
+        resultY = (c * resultX) + c1
+
+        print("\nPonto equidistante:", [resultX, resultY])
 
     elif yDiffAB != 0 and xDiffAB != 0 and yDiffAC != 0 and xDiffAC != 0:
-        getResult()
+        resultX = -((c1 + (-a1)) / ((-a) + c))
+        resultY = (a * resultX) + a1
+
+        print("\nPonto equidistante:", [resultX, resultY])
 
 
 x1, x2, x3, y1, y2, y3 = getCoords()
